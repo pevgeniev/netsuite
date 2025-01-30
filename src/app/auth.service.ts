@@ -22,7 +22,7 @@ export class AuthService {
     //tokenEndpoint: 'https://4678272.suitetalk.api.netsuite.com/services/rest/auth/oauth2/v1/token', // Token endpoint from NetSuite
     //userinfoEndpoint: 'https://4678272.suitetalk.api.netsuite.com/services/rest/auth/oauth2/v1/userinfo', // Userinfo endpoint from NetSuite
     clientId: '7a0a3c441c3cf1ff3898e6b92de44e00ae386952880cb21c0249d93e6b718540',
-    redirectUri: window.location.origin + '/callback', // Callback URL after authentication
+    redirectUri: 'https://pevgeniev.github.io/netsuite/callback', // Callback URL after authentication
   };
 
   initAuth() {
@@ -48,10 +48,10 @@ export class AuthService {
     const accessToken = this.oauthService.getAccessToken();
     return accessToken;
   }
-  
+
   public get name() {
     let claims = this.oauthService.getIdentityClaims();
     if (!claims) return null;
     return claims['name'];
-}
+  }
 }
